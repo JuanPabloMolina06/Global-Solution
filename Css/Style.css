@@ -100,7 +100,8 @@ a {
 .pgrafo {
     font-size: 2rem;
     color: var(--text-color);
-    margin: 2rem 80rem 2rem 0rem;
+    width: 50%;
+    margin-top: 2rem;
 }
 
 .section-page2 {
@@ -125,6 +126,18 @@ a {
     display: flex;
     flex-direction: column;
     background-color: blue;
+}
+
+.filho-page4 {
+    display: flex;
+    height: 500px;
+    background-color: aqua;
+    gap: 30px;
+
+    & img {
+        width: 50%;
+        height: 500px;
+    }
 }
 
 .section-page5 {
