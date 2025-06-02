@@ -35,6 +35,13 @@ a {
     transition: color .7s;
 }
 
+.img500 {
+    width: 50%;
+    min-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
 .container {
     width: 100%;
     color: var(--color-light);
@@ -72,31 +79,75 @@ a {
     flex-direction: column;
     align-items: center;
     margin: auto;
-    background-color: red;
+    /* background-color: red; */
 }
 
-.section-page1 {
+.section-page {
     width: 100%;
     height: 100vh;
+    margin-top: 5rem;
     display: flex;
     flex-direction: column;
-    background-color: blue;
+    align-items: center;
+    /* background-color: blue; */
 
-    & img {
-        width: 50%;
-        height: 500px;
-        object-fit: cover;
+    & h2 {
+        margin-bottom: 4rem;
     }
 }
 
-.filho-page1 {
+.filho-page {
     display: flex;
+    width: 100%;
     align-items: center;
     min-height: 200px;
-    max-height: 500px;
     background-color: aqua;
     gap: 30px;
     
+}
+
+.filho-page1 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.filho-page2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4rem;
+
+    & p {
+        font-size: 2rem;
+        color: var(--text-color);
+    }
+
+    & span {
+        font-weight: bold;
+    }
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 2rem;
+    gap: 1.5rem;
+    position: absolute;
+    left: 250px;
+    width: 250px;
+    height: 270px;
+    border-radius: 20px;
+    border: solid 1px black;
+    font-size: 1.7rem;
+
+    & p {
+        font-weight: bold;
+        font-size: 2rem;
+    }
 }
 
 .btn {
@@ -114,17 +165,9 @@ a {
 
 .pgrafo {
     font-size: 2rem;
+    margin-bottom: 5rem;
     color: var(--text-color);
     width: 50%;
-    margin-top: 2rem;
-}
-
-.section-page2 {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background-color: blue;
 }
 
 .section-page3 {
@@ -135,56 +178,20 @@ a {
     background-color: blue;
 }
 
-.section-page4 {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background-color: blue;
-}
-
-.filho-page4 {
-    display: flex;
-    align-items: center;
-    min-height: 200px;
-    max-height: 500px;
-    background-color: aqua;
-    gap: 30px;
-
-    & img {
-        width: 50%;
-        height: 500px;
-        object-fit: cover;
-    }
-
-}
-
 .p-center {
     display: flex;
     justify-content: center;
     text-align: center;
     margin-top: 10rem;
-    background-color: white;
+    /* background-color: white; */
 
     & p {
         margin-top: 0px;
+        font-size: 2rem;
+        margin-bottom: 5rem;
+        color: var(--text-color);
+        width: 80%;
     }
-}
-
-.section-page5 {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background-color: blue;
-}
-
-.section-page6 {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background-color: blue;
 }
 
 .rodape {
