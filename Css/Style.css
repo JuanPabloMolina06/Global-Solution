@@ -42,6 +42,14 @@ a {
     border-radius: var(--border-radius10);
 }
 
+.imgObjetivos {
+    width: min(100%, 7vh);
+}
+
+.imgIconPerson {
+    width: min(100%, 4vh);
+}
+
 .container {
     width: 100%;
     max-width: 100%;
@@ -97,7 +105,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: blue;
+    /* background-color: blue; */
 
     & h1 {
         font-size: clamp(2rem, 5vw, 4rem);
@@ -125,7 +133,7 @@ a {
 
 .filho-page3 {
     width: 100%;
-    height: 80vh;
+    height: 75vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -157,11 +165,12 @@ a {
     background-color: orange;
 }
 
-.abrigo {
+.beneficios {
     display: flex;
     width: 80%;
     height: 400px;
     gap: 30px;
+    border-radius: var(--border-radius10);
     background-color: aqua;
 }
 
@@ -199,7 +208,7 @@ a {
     flex-direction: column;
     justify-content: center;
     gap: 25px;
-    width: 45%;
+    width: 34%;
 
     & h2 {
         font-size: 3rem;
@@ -220,7 +229,7 @@ a {
     border: solid 1px black;
     border-radius: 20px;
     padding: 20px;
-    gap: 50px;
+    gap: 40px;
     background-color: white;
 
     & h2 {
@@ -282,6 +291,12 @@ a {
         color: var(--text-color);
         width: 80%;
     }
+}
+
+.h-center {
+    width: 60%;
+    text-align: center;
+    color: var(--text-color);
 }
 
 .rodape {
