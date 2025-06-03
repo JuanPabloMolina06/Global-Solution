@@ -89,7 +89,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* background-color: blue; */
+    background-color: blue;
 
     & h1 {
         font-size: 4rem;
@@ -97,27 +97,12 @@ a {
     }
 }
 
-.filho-page {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    min-height: 200px;
-    background-color: var(--color-gray);
-    border-radius: var(--border-radius10);
-    gap: 30px;
-
-    & p {
-        color: white;
-    }
-    
-}
-
 .filho-page1 {
     width: 100%;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .filho-page2 {
@@ -128,6 +113,48 @@ a {
     min-height: 200px;
     /* background-color: aqua; */
     gap: 30px;
+}
+
+.filho-page3 {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filho-page4 {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    min-height: 200px;
+    background-color: var(--color-gray);
+    border-radius: var(--border-radius10);
+    gap: 30px;
+
+    & p {
+        width: 45%;
+        color: white;
+    }
+    
+}
+
+.filho-page5 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    width: 100%;
+    background-color: orange;
+}
+
+.abrigo {
+    display: flex;
+    width: 80%;
+    height: 400px;
+    gap: 30px;
+    background-color: aqua;
 }
 
 .conteudo-page2 {
@@ -151,12 +178,28 @@ a {
     }
 }
 
-.objetivos {
-    width: 100%;
-    height: 80vh;
+.conteudo-page4 {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 80vh;
+}
+
+.conteudo-page5 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 25px;
+    width: 45%;
+
+    & h2 {
+        font-size: 3rem;
+    }
+
+    & p {
+        font-size: 2rem;
+        color: var(--text-color);
+    }
 }
 
 .objetivo {
@@ -181,9 +224,9 @@ a {
     display: flex;
     flex-direction: column;
     padding: 2rem 2rem;
-    gap: 1.5rem;
     position: absolute;
-    left: 250px;
+    gap: 1.5rem;
+    left: 0px;
     width: 250px;
     height: 270px;
     border-radius: 20px;
@@ -210,7 +253,7 @@ a {
 }
 
 .pgrafo {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: 5rem;
     color: var(--text-color);
     width: 50%;
@@ -225,7 +268,7 @@ a {
 
     & p {
         margin-top: 0px;
-        font-size: 2rem;
+        font-size: 2.5rem;
         margin-bottom: 5rem;
         color: var(--text-color);
         width: 80%;
