@@ -1,4 +1,4 @@
-const questoes = [
+    const questoes = [
     {
         questao: 'Qual é o principal problema que o FlowSafe busca resolver?',
         respostas: [
@@ -90,3 +90,86 @@ const questoes = [
         ]
     },
 ]
+
+document.addEventListener("DOMContentLoaded", function () {
+    const elementoQuestao = document.getElementById('questao')
+    const botaoResposta = document.getElementById('resposta-btn')
+    const proximoBtn = document.getElementById('proximo-btn')
+
+    let questaoAtualIndex = 0
+    let resultado = 0
+
+    function quizStart() {
+        questaoAtualIndex = 0
+        resultado = 0
+        proximoBtn.innerHTML = "Próxima"
+        mostrarQuestao()
+    }
+
+    function resetState() {
+        proximoBtn.style.display = 'none'
+        while (botaoResposta.firstChild) {
+            botaoResposta.removeChild(botaoResposta.firstChild)
+        }
+    }
+
+    function mostrarQuestao() {
+        resetState()
+        let questaoAtual = questoes[questaoAtualIndex]
+        let questaoN = questaoAtualIndex + 1
+        elementoQuestao.innerHTML = questaoN + '. ' + questaoAtual.questao
+        
+        questaoAtual.respostas.forEach((resposta) =>{
+            const button = document.createElement('button')
+            button.innerText = resposta.text
+            button.dataset.id = resposta.id
+            button.classList.add('btn-quiz')
+            button.addEventListener('click', respostaSelecionada)
+            botaoResposta.appendChild(button)
+        })
+    }
+
+    function respostaSelecionada(e) {
+        const respostas = questoes[questaoAtualIndex].respostas
+        const respostaCorreta = respostas.filter((resposta) => resposta.correct == true)[0]
+
+        const btnSelecionado = e.target
+        const isCorrect = btnSelecionado.dataset.id == respostaCorreta.id
+        if (isCorrect) {
+            btnSelecionado.classList.add('correta')
+            resultado++;
+        } else {
+            btnSelecionado.classList.add('incorreta')
+        }
+        Array.from(botaoResposta.children).forEach((button) => {
+            button.disabled = true
+        })
+        proximoBtn.style.display = 'block'
+    }
+
+    function mostrarResultado() {
+        resetState()
+        elementoQuestao.innerHTML = `Você acertou ${resultado} de ${questoes.length}`
+        proximoBtn.innerHTML = 'Jogar Novamente'
+        proximoBtn.style.display = 'block'
+    }
+
+    function handleProximoButton() {
+        questaoAtualIndex++;
+        if (questaoAtualIndex < questoes.length) {
+            mostrarQuestao()
+        } else {
+            mostrarResultado()
+        }
+    }
+
+    proximoBtn.addEventListener('click', () => {
+        if (questaoAtualIndex < questoes.length) {
+            handleProximoButton()
+        } else {
+            quizStart()
+        }
+    })
+
+    quizStart()
+});
