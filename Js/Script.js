@@ -173,3 +173,43 @@ document.addEventListener("DOMContentLoaded", function () {
 
     quizStart()
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('form')
+    const username = document.getElementById('username')
+    const email = document.getElementById('email')
+
+    form.addEventListener('submit', e => {
+        e.preventDefault()
+        validarInputs()
+    })
+
+    function setError(element, message) {
+        const inputControl = element.parentElement
+        const errorDisplay = inputControl.querySelector('.error')
+        errorDisplay.innerText = message
+    }
+
+    function setSucces(element) {
+        const inputControl = element.parentElement
+        const errorDisplay = inputControl.querySelector('.error')
+        errorDisplay.innerText = ''
+    }
+
+    const validarInputs = () => {
+        const valorUsername = username.value.trim()
+        const valorEmail = email.value.trim()
+
+        if (valorUsername === '') {
+            setError(username, 'Campo obrigatório')
+        } else {
+            setSucces(username)
+        }
+
+        if (valorEmail === '') {
+            setError(email, 'Campo obrigatório')
+        } else {
+            setSucces(email)
+        }
+    }
+})
