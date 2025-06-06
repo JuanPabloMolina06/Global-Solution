@@ -213,13 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
   document.getElementById('download').addEventListener('click', () => {
-  const link = document.createElement('a');
-  link.href = 'jogo.rar';
-  link.download  = 'jogo.rar';
-  document.body.appendChild(link);
-  link.click();
-
-  document.body.removeChild(link);
+  window.open("https://github.com/thompson0/Gs-Python", "_blank");
 });
 
     let sun = document.getElementById('light-mode');
