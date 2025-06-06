@@ -101,6 +101,11 @@ a {
         word-break: break-word;
         color: var(--primary-color);
     }
+
+    & img {
+        margin-bottom: 10px;
+        width: 100px;
+    }
 }
 
 .header-menu {
