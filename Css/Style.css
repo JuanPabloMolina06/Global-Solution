@@ -1,12 +1,17 @@
 :root {
-    --primary-color: ;
-    --secondary-color: ;
-    --color-gray: #262626;
-    --textHeaderFooter-color: #fff;
+    --fundo-site: #000e22;
+    --primary-color: #FFFFFF;
+    --secondary-color: #84ABE0;
+    --third-color: #7A818B;
+    --fourth-color: #1E2836;
+    --fifth-color: #8A9CB6;
     --text-color: #3b3b3b;
+    --wh100: 100%;
+    --wh50: 50%;
+    --wh80: 80%;
+    --font2: 2rem;
+    --font3: 3rem;
     --border-radius10: 10px;
-    --bg-gradient: linear-gradient(to top, rgba(0, 0, 0, .6), 
-    rgba(0, 0, 0, .3));
 }
 
 * {
@@ -22,47 +27,50 @@ html {
 
 body {
     font-size: 1.6rem;
+    background-color: var(--fundo-site);
 }
 
 ul, ol {
     list-style: none;
 }
 
+li {
+    color: var(--primary-color);
+}
+
 a {
     text-decoration: none;
-    color: var(--color-light);
+    color: var(--primary-color);
     font-weight: 600;
     transition: color .7s;
 }
 
 .img500 {
-    width: min(100%, 83vh);
+    width: min(var(--wh100), 83vh);
     min-height: 30vh;
     object-fit: cover;
     border-radius: var(--border-radius10);
 }
 
 .imgObjetivos {
-    width: min(100%, 7vh);
+    width: min(var(--wh100), 7vh);
 }
 
 .imgIconPerson {
-    width: min(100%, 4vh);
+    width: min(var(--wh100), 4vh);
 }
 
 .container {
-    width: 100%;
-    max-width: 100%;
-    height: 100%;
-    color: var(--color-light);
+    width: var(--wh100);
+    height: var(--wh100);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: 50%;
-    font-size: clamp(1.4rem, 2vw, 2rem);
+    background-position: var(--wh50);
+    font-size: clamp(1.4rem, 2vw, var(--font2));
 }
 
 .header-page {
-    width: 100%;
+    width: var(--wh100);
     min-height: 8vh;
     height: 10rem;
     display: flex;
@@ -70,51 +78,70 @@ a {
     align-items: center;
     justify-content: space-between;
     padding: 1vw;
-    background-color: var(--color-gray);
-    color: var(--textHeaderFooter-color);
-    /* font-size: 25px;   */
+    background-color: var(--fourth-color);
 
     & h1 {
-        font-size: clamp(2rem, 4vw, 3rem);
+        font-size: clamp(var(--font2), 4vw, var(--font3));
         word-break: break-word;
+        color: var(--primary-color);
+    }
+}
+
+@media ( 1024px >= width) {
+    .header-page {
+        width: var(--wh100);
+        min-height: 8vh;
+        height: 10rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1vw;
+        background-color: var(--fourth-color);
+
+        & h1 {
+            font-size: clamp(var(--font2), 4vw, var(--font3));
+            word-break: break-word;
+            color: var(--primary-color);
+        }
     }
 }
 
 .header-menu ul {
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     gap: 2vw;
     justify-content: center;
+    color: var(--primary-color);
 }
 
 .main-page {
     min-height: calc(100vh - 100px);
-    width: 80%;
+    width: var(--wh80);
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: auto;
-    /* background-color: red; */
 }
 
 .section-page {
-    width: 100%;
+    width: var(--wh100);
     min-height: 60vh;
     height: 100vh;
     margin-top: 3vw;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* background-color: blue; */
 
     & h1 {
-        font-size: clamp(2rem, 5vw, 4rem);
+        font-size: clamp(var(--font2), 5vw, 4rem);
         margin-bottom: 4vw;
+        color: var(--primary-color);
     }
 }
 
 .section-page7 {
-    width: 100%;
+    width: var(--wh100);
     min-height: 60vh;
     margin-top: 3vw;
     display: flex;
@@ -123,7 +150,7 @@ a {
 }
 
 .filho-page1 {
-    width: 100%;
+    width: var(--wh100);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -132,16 +159,17 @@ a {
 
 .filho-page2 {
     display: flex;
-    width: 100%;
+    width: var(--wh100);
     height: 75vh;
     align-items: center;
     min-height: 200px;
-    /* background-color: aqua; */
-    gap: 30px;
+    gap: 20px;
+    padding: 0px 20px;
+    background-color: var(--fourth-color);
 }
 
 .filho-page3 {
-    width: 100%;
+    width: var(--wh100);
     height: 75vh;
     display: flex;
     justify-content: space-between;
@@ -150,16 +178,16 @@ a {
 
 .filho-page4 {
     display: flex;
-    width: 100%;
+    width: var(--wh100);
     align-items: center;
     min-height: 200px;
-    background-color: var(--color-gray);
+    background-color: var(--fourth-color);
     border-radius: var(--border-radius10);
     gap: 30px;
 
     & p {
         width: 45%;
-        color: white;
+        color: var(--primary-color);
     }
     
 }
@@ -171,10 +199,10 @@ a {
     align-items: center;
     position: relative;
     height: 70vh;
-    width: 100%;
+    width: var(--wh100);
     overflow: hidden;
     border-radius: var(--border-radius10);
-    background-color: orange;
+    background-color: var(--fourth-color);
 }
 
 .filho-page6 {
@@ -186,7 +214,7 @@ a {
 
 .beneficios {
     display: none;
-    width: 80%;
+    width: var(--wh80);
     height: 400px;
     gap: 30px;
     border-radius: var(--border-radius10);
@@ -197,7 +225,7 @@ a {
 }
 
 .conteudo-page2 {
-    width: 100%;
+    width: var(--wh100);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -205,15 +233,17 @@ a {
 
     & h2 {
         font-size: 3.7rem;
+        color: var(--primary-color);
     }
 
     & p {
         font-size: 2.3rem;
-        color: var(--text-color);
+        color: var(--primary-color);
     }
 
     & span {
         font-weight: bold;
+        color: var(--secondary-color);
     }
 }
 
@@ -232,25 +262,25 @@ a {
     width: 34%;
 
     & h2 {
-        font-size: 3rem;
+        font-size: var(--font3);
+        color: var(--primary-color);
     }
 
     & p {
-        font-size: 2rem;
-        color: var(--text-color);
+        font-size: var(--font2);
+        color: var(--primary-color);
     }
 }
 
 .nav-button {
     position: absolute;
-    top: 50%;
+    top: 45%;
     font-size: 30px;
     color: white;
-    background: orange;
+    background: var(--fourth-color);
     border: none;
     padding: 10px 15px;
     cursor: pointer;
-    border-radius: 5px;
 }
 
 .prev {
@@ -265,8 +295,8 @@ a {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 100%;
-    height: 100%;
+    width: var(--wh100);
+    height: var(--wh100);
     gap: 50px;
 }
 
@@ -279,6 +309,7 @@ a {
     border-radius: 20px;
     border: solid 1px black;
     box-shadow: 5px 8px 10px rgba(0, 0, 0, .3);
+    background-color: var(--third-color);
 }
 
 .quiz2 {
@@ -293,7 +324,7 @@ a {
 .btn-quiz {
     background-color: white;
     color: var(--text-color);
-    width: 100%;
+    width: var(--wh100);
     border: solid 1px black;
     padding: 10px;
     margin: 10px 0px;
@@ -304,7 +335,7 @@ a {
 }
 
 .btn-quiz:hover{
-    background-color: var(--color-gray);
+    background-color: var(--fourth-color);
     color: white;
 }
 
@@ -312,9 +343,9 @@ a {
     width: 150px;
     padding: 10px;
     margin: auto;
-    font-size: 2rem;
+    font-size: var(--font2);
     font-weight: bold;
-    background-color: #A78BFA;
+    background-color: var(--secondary-color);
     color: white;
     border-radius: 4px;
     border: none;
@@ -324,7 +355,7 @@ a {
 }
 
 .prox-btn:hover {
-    background-color: #8B5CF6;
+    background-color: var(--fifth-color);
 }
 
 .correta {
@@ -342,7 +373,7 @@ a {
     flex-direction: column;
     padding: 20px;
     gap: 6px;
-    background-color: white;
+    background-color: var(--third-color);
     border: solid 1px black;
     border-radius: var(--border-radius10);
     box-shadow: 5px 8px 10px rgba(0, 0, 0, .3);
@@ -354,7 +385,7 @@ a {
     & input {
         border-radius: 5px;
         padding: 10px;
-        font-size: 2rem;
+        font-size: var(--font2);
         box-shadow: none;
         border: none;
         background-color: #dadada;
@@ -364,7 +395,7 @@ a {
         height: 100px;
         border-radius: 5px;
         padding: 10px;
-        font-size: 2rem;
+        font-size: var(--font2);
         box-shadow: none;
         border: none;
         background-color: #dadada;
@@ -373,11 +404,11 @@ a {
     }
 
     & button {
-        width: 50%;
+        width: var(--wh50);
         padding: 10px;
-        font-size: 2rem;
+        font-size: var(--font2);
         font-weight: bold;
-        background-color: #A78BFA;
+        background-color: var(--secondary-color);
         color: white;
         border-radius: var(--border-radius10);
         border: none;
@@ -386,7 +417,7 @@ a {
     }
 
     & button:hover {
-        background-color: #8B5CF6;
+        background-color: var(--fifth-color);
     }
 }
 
@@ -412,7 +443,7 @@ a {
     background-color: white;
 
     & h2 {
-        font-size: 2rem;
+        font-size: var(--font2);
         text-align: center;
     }
 }
@@ -420,27 +451,29 @@ a {
 .menu {
     display: flex;
     flex-direction: column;
-    padding: 2rem 2rem;
+    padding: var(--font2);
     position: absolute;
     gap: 1.5rem;
     left: 0px;
     width: 250px;
     height: 270px;
     border-radius: 20px;
-    border: solid 1px black;
+    border: solid 1px var(--primary-color);
+    background-color: var(--fourth-color);
     font-size: 1.7rem;
 
     & p {
         font-weight: bold;
-        font-size: 2rem;
+        font-size: var(--font2);
+        color: var(--primary-color);
     }
 }
 
 .pgrafo {
     font-size: 2.5rem;
     margin-bottom: 5rem;
-    color: var(--text-color);
-    width: 50%;
+    color: var(--primary-color);
+    width: var(--wh50);
 }
 
 .p-center {
@@ -448,33 +481,32 @@ a {
     justify-content: center;
     text-align: center;
     margin-top: 7rem;
-    background-color: white;
 
     & p {
         margin-top: 0px;
         font-size: 2.5rem;
         margin-bottom: 5rem;
-        color: var(--text-color);
-        width: 80%;
+        color: var(--primary-color);
+        width: var(--wh80);
     }
 }
 
 .h-center {
     width: 60%;
     text-align: center;
-    color: var(--text-color);
+    color: var(--primary-color);
 }
 
 .rodape {
     display: flex;
-    width: 100%;
+    width: var(--wh100);
     height: 200px;
-    background-color: var(--color-gray);
+    background-color: var(--fourth-color);
     align-items: flex-end;
 
     & p {
-        width: 100%;
+        width: var(--wh100);
         text-align: center;
-        color: var(--textHeaderFooter-color);
+        color: var(--primary-color);
     }
 }
