@@ -212,6 +212,68 @@ document.addEventListener('DOMContentLoaded', () => {
             setSucces(email)
         }
     }
+  document.getElementById('download').addEventListener('click', () => {
+  const link = document.createElement('a');
+  link.href = 'jogo.rar';
+  link.download  = 'jogo.rar';
+  document.body.appendChild(link);
+  link.click();
+
+  document.body.removeChild(link);
+});
+
+    let sun = document.getElementById('light-mode');
+    let moon = document.getElementById('dark-mode');
+    let body = document.querySelector('body');
+    let purple = document.getElementById('purple-mode');
+
+    sun.addEventListener('click', () => {
+        body.classList.remove('purple-mode');
+        body.classList.add('light-mode');
+    });
+
+    moon.addEventListener('click', () => {
+        body.classList.remove('light-mode');
+        body.classList.remove('purple-mode');
+    });
+
+    purple.addEventListener('click', () => {
+        body.classList.remove('light-mode');
+        body.classList.add('purple-mode');
+    });
+
+    function MenuHamburguer() {
+        const menu = document.querySelector('.mobile-menu')
+        const navegacao = document.querySelector('.navegacao')
+        const navLinks = document.querySelectorAll('.navegacao a')
+
+        const activeClass = 'active'
+
+        function toggleMenu() {
+            navegacao.classList.toggle(activeClass)
+        }
+
+        function closeMenu() {
+            navegacao.classList.remove(activeClass)
+        }
+
+        function addClickEvents() {
+            menu.addEventListener('click', toggleMenu)
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', closeMenu)
+            })
+        }
+
+        function init() {
+            if (menu && navegacao) {
+                addClickEvents()
+            }
+        }
+    init()
+}
+
+MenuHamburguer()
 })
 
 window.onload = () => {
