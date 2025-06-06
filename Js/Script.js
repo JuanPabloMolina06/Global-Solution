@@ -172,7 +172,7 @@ document.addEventListener("DOMContentLoaded", function () {
     })
 
     quizStart()
-});
+})
 
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('form')
@@ -213,3 +213,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 })
+
+window.onload = () => {
+  let slideIndex = 0
+  const slides = document.querySelectorAll('.beneficios')
+
+  function mostrarSlide(index) {
+    slides.forEach(slide => slide.classList.remove('active'))
+    slides[index].classList.add('active')
+  }
+
+  function mudarSlide(n) {
+    slideIndex = (slideIndex + n + slides.length) % slides.length
+    mostrarSlide(slideIndex)
+  }
+
+  window.changeSlide = mudarSlide
+  mostrarSlide(slideIndex)
+}

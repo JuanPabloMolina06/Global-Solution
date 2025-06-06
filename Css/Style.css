@@ -169,9 +169,12 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
     height: 70vh;
     width: 100%;
-    /* background-color: orange; */
+    overflow: hidden;
+    border-radius: var(--border-radius10);
+    background-color: orange;
 }
 
 .filho-page6 {
@@ -181,22 +184,16 @@ a {
     gap: 50px;
 }
 
-.beneficios1 {
-    display: flex;
+.beneficios {
+    display: none;
     width: 80%;
     height: 400px;
     gap: 30px;
     border-radius: var(--border-radius10);
-    /* background-color: aqua; */
 }
 
-.beneficios {
+.beneficios.active {
     display: flex;
-    width: 80%;
-    height: 400px;
-    gap: 30px;
-    border-radius: var(--border-radius10);
-    /* background-color: aqua; */
 }
 
 .conteudo-page2 {
@@ -205,7 +202,6 @@ a {
     flex-direction: column;
     justify-content: center;
     gap: 6rem;
-    /* background-color: yellow; */
 
     & h2 {
         font-size: 3.7rem;
@@ -245,6 +241,26 @@ a {
     }
 }
 
+.nav-button {
+    position: absolute;
+    top: 50%;
+    font-size: 30px;
+    color: white;
+    background: orange;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
 .conteudo-page7 {
     display: flex;
     flex-direction: row;
@@ -262,6 +278,7 @@ a {
     width: 40%;
     border-radius: 20px;
     border: solid 1px black;
+    box-shadow: 5px 8px 10px rgba(0, 0, 0, .3);
 }
 
 .quiz2 {
